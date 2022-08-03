@@ -15,7 +15,7 @@ pub fn spawn_shell(info: &ShellSpawnInfo) -> Result<()> {
 function kubie_preexec --on-event fish_preexec
     set -xg KUBECONFIG "$KUBIE_KUBECONFIG"
 end
-
+direnv allow .
 if test "$KUBIE_PROMPT_DISABLE" = "0"
     # The general idea behind the prompt substitions is to save the existing
     # prompt's output _before_ anything else is run. This is important since the
